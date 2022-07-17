@@ -19,6 +19,9 @@ ui <- fluidPage(
     titlePanel("Cartographers"),
     fluidRow(
         column(2,
+               div(
+                   class="card-empty"
+               )
        ),
        column(2,
               div(
@@ -62,17 +65,17 @@ ui <- fluidPage(
         ),
         column(2,
                div(
-                   class="card",
-                   textOutput("top.card.name"),
+                   class="card explore",
                    textOutput("top.card.cost"),
-                   imageOutput("top.card.illustration"),
+                   textOutput("top.card.name"),
+                   imageOutput("top.card.illustration", height="auto"),
                    textOutput("top.card.description")
                )
                #textOutput("card.counter"),
         ),
         column(2,
                div(
-                   class="card",
+                   class="card score",
                    textOutput("A.name"),
                    img(src = "img/placeholder.png", height = 100, width = 100),
                    textOutput("A.description")
@@ -80,7 +83,7 @@ ui <- fluidPage(
         ),
         column(2,
                div(
-                   class="card",
+                   class="card score",
                    textOutput("B.name"),
                    img(src = "img/placeholder.png", height = 100, width = 100),
                    textOutput("B.description")
@@ -88,7 +91,7 @@ ui <- fluidPage(
         ),
         column(2,
                div(
-                   class="card",
+                   class="card score",
                    textOutput("C.name"),
                    img(src = "img/placeholder.png", height = 100, width = 100),
                    textOutput("C.description")
@@ -96,7 +99,7 @@ ui <- fluidPage(
         ),
         column(2,
                div(
-                   class="card",
+                   class="card score",
                    textOutput("D.name"),
                    img(src = "img/placeholder.png", height = 100, width = 100),
                    textOutput("D.description")
@@ -172,7 +175,10 @@ server <- function(input, output) {
         input$next.card
         if(this_season == 0) 0 else seasons$max.time[this_season]
     })
-    output$season.description <- renderText({""})
+    output$season.description <- renderText({
+        input$next.card
+        if(this_season == 0) 0 else seasons$edict[this_season]
+    })
 
     output$A.name <- renderText({scoring$en_name[1]})
     output$A.description <- renderText({scoring$en_description[1]})
@@ -199,7 +205,12 @@ server <- function(input, output) {
         input$next.card
 
         if (this_card > 0) {
-            text <- deck$cost[this_card]
+            if (is.na(deck$cost[this_card])) {
+                text <- ""
+            }
+            else {
+                text <- deck$cost[this_card]
+            }
         }
         else {
             text <- ""

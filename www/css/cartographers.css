@@ -1,22 +1,46 @@
-.card {
-  background: brown;
-  color: white;
+.card,
+.card-empty {
   padding: 1em;
   margin: 1em;
   border-radius: 1em;
   min-height: 30em;
 }
 
-.card div:first-child {
-    text-align: center;
-    font-weight: bold;
-    padding: 1em;
+.card {
+  background: brown;
+  color: white;
 }
 
 .card img {
   width: 100%;
 }
 
-.card div:last-child {
+.card.score div:first-child {
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.card.score div:last-child {
+    padding: 1em;
+}
+
+.card.explore div:first-child {
+  float: right;
+  background: gold;
+  border-radius: 1em;
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  color: black;
+}
+
+.card.explore div:nth-child(2) {
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.card.explore div:last-child {
     padding: 1em;
 }
