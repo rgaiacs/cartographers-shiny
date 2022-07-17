@@ -1,0 +1,22 @@
+.card {
+  background: brown;
+  color: white;
+  padding: 1em;
+  margin: 1em;
+  border-radius: 1em;
+  min-height: 30em;
+}
+
+.card div:first-child {
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card div:last-child {
+    padding: 1em;
+}
