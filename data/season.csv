@@ -1,5 +1,5 @@
-"name","max.time","edict"
-"Spring",8,"A/B"
-"Summer",8,"B/C"
-"Fall",7,"C/D"
-"Winter",6,"D/A"
+"en_name","max.time","edict","ambush.number"
+"Spring",8,"A/B",2
+"Summer",8,"B/C",3
+"Fall",7,"C/D",4
+"Winter",6,"D/A",4

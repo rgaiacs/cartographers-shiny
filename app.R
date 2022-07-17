@@ -23,7 +23,7 @@ ui <- fluidPage(
        column(2,
               div(
                   class="card",
-                  # textOutput("season.name"),
+                  textOutput("season.name"),
                   p(textOutput("season.counter", inline = TRUE), "/", textOutput("season.max", inline = TRUE)),
                   textOutput("season.description")
               )
@@ -123,21 +123,36 @@ server <- function(input, output) {
     explore <- read_csv('data/explore.csv') %>%
         sample_frac(1)
     
+    ambush <- read_csv('data/ambush.csv') %>%
+        sample_frac(1)
+    
     # Main logic
     observeEvent(input$next.card, {
+        if (this_season > 4) {
+            return()
+        }
         if (start_new_season) {
             start_new_season <<- 0
             this_season <<- this_season + 1
             this_card <<- 1
-            time_now <<- time_now <<-  explore$cost[1:this_card] |>
+            
+            deck <<- merge(
+                explore,
+                head(ambush, seasons$ambush.number[this_season]),
+                by=c("en_name", "illustration"),
+                all=TRUE
+            )
+            deck <<- sample_frac(deck, 1)
+            
+            time_now <<- time_now <<-  deck$cost[1:this_card] |>
                 sum(na.rm = TRUE)
         }
         else {
             this_card <<- this_card + 1
-            time_now <<-  explore$cost[1:this_card] |>
+            time_now <<-  deck$cost[1:this_card] |>
                 sum(na.rm = TRUE)
             
-            if (time_now > seasons$max.time[this_season]) {
+            if (time_now >= seasons$max.time[this_season]) {
                 start_new_season <<- 1
             }
             
@@ -147,7 +162,7 @@ server <- function(input, output) {
     # Update state
     output$season.name <- renderText({
         input$next.card
-        seasons$name[this_season]
+        seasons$en_name[this_season]
     })
     output$season.counter <- renderText({
         input$next.card
@@ -173,7 +188,7 @@ server <- function(input, output) {
         input$next.card
 
         if (this_card > 0) {
-            text <- explore$en_name[this_card]
+            text <- deck$en_name[this_card]
         }
         else {
             text <- ""
@@ -184,7 +199,7 @@ server <- function(input, output) {
         input$next.card
 
         if (this_card > 0) {
-            text <- explore$cost[this_card]
+            text <- deck$cost[this_card]
         }
         else {
             text <- ""
@@ -195,7 +210,7 @@ server <- function(input, output) {
         input$next.card
 
         if (this_card > 0) {
-            text <-  normalizePath(file.path('./images', explore$illustration[this_card]))
+            text <-  normalizePath(file.path('./images', deck$illustration[this_card]))
         }
         else {
             text <- ""
