@@ -69,6 +69,10 @@ ui <- fluidPage(
                    textOutput("top.card.cost"),
                    textOutput("top.card.name"),
                    imageOutput("top.card.illustration", height="auto"),
+                   div(
+                       class="coin",
+                       textOutput("top.card.coin")
+                   ),
                    textOutput("top.card.description")
                )
                #textOutput("card.counter"),
@@ -210,6 +214,23 @@ server <- function(input, output) {
             }
             else {
                 text <- deck$cost[this_card]
+            }
+        }
+        else {
+            text <- ""
+        }
+        text
+    })
+    output$top.card.coin <- renderText({
+        input$next.card
+        
+        if (this_card > 0) {
+            cat(deck$cost[this_card])
+            if (!is.na(deck$cost[this_card]) & deck$cost[this_card] == 1) {
+                text <- "1 coin"
+            }
+            else {
+                text <- ""
             }
         }
         else {

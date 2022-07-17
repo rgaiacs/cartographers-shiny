@@ -15,17 +15,17 @@
   width: 100%;
 }
 
-.card.score div:first-child {
+.card.score > div:first-child {
     text-align: center;
     font-weight: bold;
     padding: 1em;
 }
 
-.card.score div:last-child {
+.card.score > div:last-child {
     padding: 1em;
 }
 
-.card.explore div:first-child {
+.card.explore > div:first-child {
   float: right;
   background: gold;
   border-radius: 1em;
@@ -35,12 +35,16 @@
   color: black;
 }
 
-.card.explore div:nth-child(2) {
+.card.explore > div:nth-child(2) {
     text-align: center;
     font-weight: bold;
     padding: 1em;
 }
 
-.card.explore div:last-child {
+.card.explore > div:last-child {
     padding: 1em;
+}
+
+.coin > div {
+  width: 50%;
 }
