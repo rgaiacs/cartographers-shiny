@@ -20,7 +20,7 @@ heroes,green,deepwood.svg,Deepwood,Earn six points for each cluster of five or m
 heroes,green,heart-of-the-forest.svg,Heart of the Forest,Earn two points for each green surrounded on all four sides by greens or the edge of the map.
 heroes,green,sleepy-valley.svg,Sleepy Valley,Earn four points for each row that contains three or more greens.
 heroes,blue and yellow,craylund.svg,Craylund,Earn seven points for each cluster of yellows adjacent to three or more blues.
-heroes,blue and yellow,ulem’s-wallow.svg,Ulem’s Wallow,Earn four points for each blue adjacent to two or more yellows.
+heroes,blue and yellow,ulems-wallow.svg,Ulem’s Wallow,Earn four points for each blue adjacent to two or more yellows.
 heroes,blue and yellow,clawsgrave-peaks.svg,Clawsgrave Peaks,Earn five points for each mountain space connected to a yellow by a cluster of blues.
 heroes,blue and yellow,jorekburg.svg,Jorekburg,Earn four points for each column that contains an equal number of yellows and blues. There must be at least one of each.
 heroes,red,traylo-monastery.svg,Traylo Monastery,Earn seven points for each cluster of reds that contains four spaces in a 4x1 or 1x4 rectangle.
