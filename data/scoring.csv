@@ -1,17 +1,33 @@
-"group","illustration","en_name","en_description"
-"green","sentinel-wood.svg","Sentinel Wood","One point for each green touching the edge of the map."
-"green","treetower.svg","Treetower","One point for each green surrounded on all four sides (or map edge)."
-"green","stoneside-forest.svg","Stoneside Forest","Three points for each mountain space connected to another mountain via a chain of greens."
-"green","greenbough.svg","Greenbough","One point for each row and column with at least one green. The same green can count for both row+column."
-"blue","mages-valley.svg","Mages Valley","Two points for each blue adjacent to a mountain. One point for each yellow adjacent to a mountain."
-"blue","shoreside-expanse.svg","Shoreside Expanse","Three points for each individual blue/yellow cluster, but no points if it touches the map edge or the opposite color."
-"blue","the-golden-granary.svg","The Golden Granary","One point for each blue adjacent to a ruins spaces. Three points for each yellow on a ruins space."
-"blue","canal-lake.svg","Canal Lake","One point for each blue adjacent to at least one yellow and each yellow adjacent to at least one blue."
-"red","wildholds.svg","Wildholds","Eight points for each cluster of reds that is at least 6 spaces."
-"red","great-city.svg","Great City","One point for each red space in the largest cluster of reds that is not touching a mountain."
-"red","shieldgate.svg","Shieldgate","Two points for each space in the second largest cluster of reds."
-"red","greengold-plains.svg","Greengold Plains","Three points for each cluster of reds that is adjacent to at least 3 different other terrain types."
-"shape","the-broken-road.svg","The Broken Road","Three points for each complete diagonal line of filled spaces that touches the left and bottom edges of map."
-"shape","the-cauldrons.svg","The Cauldrons","One point for each empty square surrounded on all four sides (or map edge)."
-"shape","borderlands.svg","Borderlands","Six points for each complete row and column."
-"shape","lost-barony.svg","Lost Barony","Three points for each space along one edge of the largest square of filled spaces. (2 x 2 square = 2*3 points) "
+game,group,illustration,en_name,en_description
+original,green,sentinel-wood.svg,Sentinel Wood,One point for each green touching the edge of the map.
+original,green,treetower.svg,Treetower,One point for each green surrounded on all four sides (or map edge).
+original,green,stoneside-forest.svg,Stoneside Forest,Three points for each mountain space connected to another mountain via a chain of greens.
+original,green,greenbough.svg,Greenbough,One point for each row and column with at least one green. The same green can count for both row+column.
+original,blue and yellow,mages-valley.svg,Mages Valley,Two points for each blue adjacent to a mountain. One point for each yellow adjacent to a mountain.
+original,blue and yellow,shoreside-expanse.svg,Shoreside Expanse,"Three points for each individual blue/yellow cluster, but no points if it touches the map edge or the opposite color."
+original,blue and yellow,the-golden-granary.svg,The Golden Granary,One point for each blue adjacent to a ruins spaces. Three points for each yellow on a ruins space.
+original,blue and yellow,canal-lake.svg,Canal Lake,One point for each blue adjacent to at least one yellow and each yellow adjacent to at least one blue.
+original,red,wildholds.svg,Wildholds,Eight points for each cluster of reds that is at least 6 spaces.
+original,red,great-city.svg,Great City,One point for each red space in the largest cluster of reds that is not touching a mountain.
+original,red,shieldgate.svg,Shieldgate,Two points for each space in the second largest cluster of reds.
+original,red,greengold-plains.svg,Greengold Plains,Three points for each cluster of reds that is adjacent to at least 3 different other terrain types.
+original,shape,the-broken-road.svg,The Broken Road,Three points for each complete diagonal line of filled spaces that touches the left and bottom edges of map.
+original,shape,the-cauldrons.svg,The Cauldrons,One point for each empty square surrounded on all four sides (or map edge).
+original,shape,borderlands.svg,Borderlands,Six points for each complete row and column.
+original,shape,lost-barony.svg,Lost Barony,Three points for each space along one edge of the largest square of filled spaces. (2 x 2 square = 2*3 points) 
+heroes,green,faunlost-thicket.svg,Faunlost Thicket,Earn two reputation stars for each forest space in the longest unbroken column of forest spaces.
+heroes,green,deepwood.svg,Deepwood,Earn six reputation stars for each cluster of five or more forest spaces that is not adjacent to any village spaces.
+heroes,green,heart-of-the-forest.svg,Heart of the Forest,Earn two reputation stars for each forest space surrounded on all four sides by forest spaces or the edge of the map.
+heroes,green,sleepy-valley.svg,Sleepy Valley,Earn four reputation stars for each row that contains three or more forest spaces.
+heroes,blue and yellow,craylund.svg,Craylund,Earn seven reputation stars for each cluster of farm spaces adjacent to three or more water spaces.
+heroes,blue and yellow,ulem’s-wallow.svg,Ulem’s Wallow,Earn four reputation stars for each water space adjacent to two or more farm spaces.
+heroes,blue and yellow,clawsgrave-peaks.svg,Clawsgrave Peaks,Earn five reputation stars for each mountain space connected to a farm space by a cluster of water spaces.
+heroes,blue and yellow,jorekburg.svg,Jorekburg,Earn four reputation stars for each column that contains an equal number of farm spaces and water spaces. There must be at least one of each.
+heroes,red,traylo-monastery.svg,Traylo Monastery,Earn seven reputation stars for each cluster of village spaces that contains four spaces in a 4x1 or 1x4 rectangle.
+heroes,red,outer-enclave.svg,Outer Enclave,Choose a cluster of village spaces and earn one reputation star for each empty space adjacent to that cluster.
+heroes,red,gnomish-colony.svg,Gnomish Colony,Earn six reputation stars for each cluster of village spaces that contains four spaces in a 2x2 square.
+heroes,red,caravansary.svg,Caravansary,Choose a cluster of village spaces and earn one reputation star for each row and column that contains a space from that cluster.
+heroes,shape,dwarvenholds.svg,Dwarvenholds,Earn seven reputation stars for each complete row or complete column of filled spaces that contains a mountain space.
+heroes,shape,silos.svg,Silos,Earn ten reputation stars for each complete odd numbered column of filled spaces.
+heroes,shape,banded-hills.svg,Banded Hills,Earn four reputation stars for each row that contains five or more different terrain types.
+heroes,shape,starlit-sigil.svg,Starlit Sigil,Earn four reputation stars for each cluster of exactly three empty spaces surrounded on all sides by filled spaces or the edge of the map.

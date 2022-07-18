@@ -7,7 +7,7 @@
    viewBox="0 0 26.458334 10.583329"
    version="1.1"
    id="svg5"
-   sodipodi:docname="sentinel-wood.svg"
+   sodipodi:docname="silos.svg"
    inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -26,7 +26,7 @@
      showgrid="true"
      inkscape:zoom="10.550996"
      inkscape:cx="50.84828"
-     inkscape:cy="23.410112"
+     inkscape:cy="23.50489"
      inkscape:window-width="1600"
      inkscape:window-height="840"
      inkscape:window-x="0"
@@ -46,7 +46,7 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
+       style="color:#000000;overflow:visible;fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
        id="rect63"
        width="2.3812504"
        height="2.3812492"
@@ -54,7 +54,7 @@
        y="-2.5135407"
        transform="scale(1,-1)" />
     <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
+       style="color:#000000;overflow:visible;fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
        id="rect1033"
        width="2.3812504"
        height="2.3812492"
@@ -70,7 +70,7 @@
        y="-2.5135407"
        transform="scale(1,-1)" />
     <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
+       style="color:#000000;overflow:visible;fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
        id="rect1037"
        width="2.3812504"
        height="2.3812492"
@@ -95,14 +95,6 @@
        transform="scale(1,-1)" />
     <rect
        style="color:#000000;overflow:visible;fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
-       id="rect1076"
-       width="2.3812504"
-       height="2.3812492"
-       x="13.361459"
-       y="-5.1593728"
-       transform="scale(1,-1)" />
-    <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
        id="rect1078"
        width="2.3812504"
        height="2.3812492"
@@ -110,7 +102,7 @@
        y="-5.1593728"
        transform="scale(1,-1)" />
     <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
+       style="color:#000000;overflow:visible;fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
        id="rect1082"
        width="2.3812504"
        height="2.3812492"
@@ -126,7 +118,7 @@
        y="-7.8052053"
        transform="scale(1,-1)" />
     <rect
-       style="color:#000000;overflow:visible;fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
+       style="color:#000000;overflow:visible;fill:#00ffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
        id="rect1086"
        width="2.3812504"
        height="2.3812492"
@@ -134,44 +126,31 @@
        y="-7.8052053"
        transform="scale(1,-1)" />
     <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
+       style="color:#000000;overflow:visible;fill:#ffffff;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
        id="rect1088"
        width="2.3812504"
        height="2.3812492"
        x="16.007292"
        y="-7.8052053"
        transform="scale(1,-1)" />
+    <text
+       xml:space="preserve"
+       style="font-size:8.46667px;line-height:22.7542px;font-family:STIX;-inkscape-font-specification:STIX;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;fill:none;stroke:#000000;stroke-width:0.264583px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="13.691261"
+       y="10.213442"
+       id="text4754"><tspan
+         sodipodi:role="line"
+         id="tspan4752"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.38125px;font-family:Handlee;-inkscape-font-specification:'Handlee, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.264583px"
+         x="13.691261"
+         y="10.213442">+1</tspan></text>
     <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
-       id="rect1092"
-       width="2.3812504"
-       height="2.3812492"
-       x="8.0697918"
-       y="-10.451037"
-       transform="scale(1,-1)" />
-    <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
-       id="rect1094"
-       width="2.3812504"
-       height="2.3812492"
-       x="10.715625"
-       y="-10.451037"
-       transform="scale(1,-1)" />
-    <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
-       id="rect1096"
+       style="color:#000000;overflow:visible;fill:#ff0000;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
+       id="rect5111"
        width="2.3812504"
        height="2.3812492"
        x="13.361459"
-       y="-10.451037"
-       transform="scale(1,-1)" />
-    <rect
-       style="color:#000000;overflow:visible;fill:#00ff00;stroke:#000000;stroke-width:0.264583;stroke-dasharray:none"
-       id="rect1098"
-       width="2.3812504"
-       height="2.3812492"
-       x="16.007292"
-       y="-10.451037"
+       y="-5.1593728"
        transform="scale(1,-1)" />
   </g>
 </svg>
