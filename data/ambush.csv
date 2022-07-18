@@ -1,9 +1,13 @@
-en_name,direction,illustration
-Bugbear Assault,left,bugbear-assault.svg
-Flayer Incursion,left,flayer-incursion.svg
-Gnoll Raid,right,gnoll-raid.svg
-Goblin Attack,left,goblin-attack.svg
-Insectoid Invasion,right,insectoid-invasion.svg
-Kobold Onslaught,right,kobold-onslaught.svg
-Ogre Charge,left,ogre-charge.svg
-Ratman Strike,right,ratman-strike.svg
+game,en_name,direction,illustration,power
+original,Bugbear Assault,left,bugbear-assault.svg,
+original,Flayer Incursion,left,flayer-incursion.svg,
+original,Gnoll Raid,right,gnoll-raid.svg,
+original,Goblin Attack,left,goblin-attack.svg,
+mini expansion,Insectoid Invasion,right,insectoid-invasion.svg,
+mini expansion,Kobold Onslaught,right,kobold-onslaught.svg,
+mini expansion,Ogre Charge,left,ogre-charge.svg,
+mini expansion,Ratman Strike,right,ratman-strike.svg,
+heroes,Dragon Inferno,,dragon-inferno.svg,"When all spaces of the Dragon are surrounded or destroyed, gain 3 coins."
+heroes,Zombie Plague,,zombie-plague.svg,"After scoring each season, draw a zombie in each empty space adjacent to a zombie."
+heroes,Giant Troll Ravage,,giant-troll-ravage.svg,"After scoring each season, destroy an empty space adjacent to the Giant Troll Ravage."
+heroes,Gorgon Gaze,,gorgon-gaze.svg,"After drawing the Gorgon Gaze, destroy an adjacent non-mountain space."
