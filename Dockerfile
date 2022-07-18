@@ -9,5 +9,5 @@ RUN micromamba install -y -n base \
 FROM base AS production
 COPY . /src/cartographers/
 WORKDIR /src/cartographers/
-CMD Rscript -e 'library(shiny); runApp("/src/cartographers/", port=3030)'
+CMD Rscript -e 'library(shiny); runApp("/src/cartographers/", port=3030, launch.browser=FALSE)'
 

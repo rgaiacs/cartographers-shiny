@@ -4,7 +4,7 @@ services:
     build:
       context: .
       target: base
-    command: library(shiny); runApp("/src/cartographers/", port=3030)
+    command: library(shiny); runApp("/src/cartographers/", port=3030, launch.browser=FALSE)
     network_mode: 'host'
     ports:
       - "3030:3030"
