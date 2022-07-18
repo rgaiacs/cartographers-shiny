@@ -15,19 +15,19 @@ original,shape,the-broken-road.svg,The Broken Road,Three points for each complet
 original,shape,the-cauldrons.svg,The Cauldrons,One point for each empty square surrounded on all four sides (or map edge).
 original,shape,borderlands.svg,Borderlands,Six points for each complete row and column.
 original,shape,lost-barony.svg,Lost Barony,Three points for each space along one edge of the largest square of filled spaces. (2 x 2 square = 2*3 points) 
-heroes,green,faunlost-thicket.svg,Faunlost Thicket,Earn two reputation stars for each forest space in the longest unbroken column of forest spaces.
-heroes,green,deepwood.svg,Deepwood,Earn six reputation stars for each cluster of five or more forest spaces that is not adjacent to any village spaces.
-heroes,green,heart-of-the-forest.svg,Heart of the Forest,Earn two reputation stars for each forest space surrounded on all four sides by forest spaces or the edge of the map.
-heroes,green,sleepy-valley.svg,Sleepy Valley,Earn four reputation stars for each row that contains three or more forest spaces.
-heroes,blue and yellow,craylund.svg,Craylund,Earn seven reputation stars for each cluster of farm spaces adjacent to three or more water spaces.
-heroes,blue and yellow,ulem’s-wallow.svg,Ulem’s Wallow,Earn four reputation stars for each water space adjacent to two or more farm spaces.
-heroes,blue and yellow,clawsgrave-peaks.svg,Clawsgrave Peaks,Earn five reputation stars for each mountain space connected to a farm space by a cluster of water spaces.
-heroes,blue and yellow,jorekburg.svg,Jorekburg,Earn four reputation stars for each column that contains an equal number of farm spaces and water spaces. There must be at least one of each.
-heroes,red,traylo-monastery.svg,Traylo Monastery,Earn seven reputation stars for each cluster of village spaces that contains four spaces in a 4x1 or 1x4 rectangle.
-heroes,red,outer-enclave.svg,Outer Enclave,Choose a cluster of village spaces and earn one reputation star for each empty space adjacent to that cluster.
-heroes,red,gnomish-colony.svg,Gnomish Colony,Earn six reputation stars for each cluster of village spaces that contains four spaces in a 2x2 square.
-heroes,red,caravansary.svg,Caravansary,Choose a cluster of village spaces and earn one reputation star for each row and column that contains a space from that cluster.
-heroes,shape,dwarvenholds.svg,Dwarvenholds,Earn seven reputation stars for each complete row or complete column of filled spaces that contains a mountain space.
-heroes,shape,silos.svg,Silos,Earn ten reputation stars for each complete odd numbered column of filled spaces.
-heroes,shape,banded-hills.svg,Banded Hills,Earn four reputation stars for each row that contains five or more different terrain types.
-heroes,shape,starlit-sigil.svg,Starlit Sigil,Earn four reputation stars for each cluster of exactly three empty spaces surrounded on all sides by filled spaces or the edge of the map.
+heroes,green,faunlost-thicket.svg,Faunlost Thicket,Earn two points for each green in the longest unbroken column of greens.
+heroes,green,deepwood.svg,Deepwood,Earn six points for each cluster of five or more greens that is not adjacent to any reds.
+heroes,green,heart-of-the-forest.svg,Heart of the Forest,Earn two points for each green surrounded on all four sides by greens or the edge of the map.
+heroes,green,sleepy-valley.svg,Sleepy Valley,Earn four points for each row that contains three or more greens.
+heroes,blue and yellow,craylund.svg,Craylund,Earn seven points for each cluster of yellows adjacent to three or more blues.
+heroes,blue and yellow,ulem’s-wallow.svg,Ulem’s Wallow,Earn four points for each blue adjacent to two or more yellows.
+heroes,blue and yellow,clawsgrave-peaks.svg,Clawsgrave Peaks,Earn five points for each mountain space connected to a yellow by a cluster of blues.
+heroes,blue and yellow,jorekburg.svg,Jorekburg,Earn four points for each column that contains an equal number of yellows and blues. There must be at least one of each.
+heroes,red,traylo-monastery.svg,Traylo Monastery,Earn seven points for each cluster of reds that contains four spaces in a 4x1 or 1x4 rectangle.
+heroes,red,outer-enclave.svg,Outer Enclave,Choose a cluster of reds and earn one reputation star for each empty space adjacent to that cluster.
+heroes,red,gnomish-colony.svg,Gnomish Colony,Earn six points for each cluster of reds that contains four spaces in a 2x2 square.
+heroes,red,caravansary.svg,Caravansary,Choose a cluster of reds and earn one reputation star for each row and column that contains a space from that cluster.
+heroes,shape,dwarvenholds.svg,Dwarvenholds,Earn seven points for each complete row or complete column of filled spaces that contains a mountain space.
+heroes,shape,silos.svg,Silos,Earn ten points for each complete odd numbered column of filled spaces.
+heroes,shape,banded-hills.svg,Banded Hills,Earn four points for each row that contains five or more different terrain types.
+heroes,shape,starlit-sigil.svg,Starlit Sigil,Earn four points for each cluster of exactly three empty spaces surrounded on all sides by filled spaces or the edge of the map.
