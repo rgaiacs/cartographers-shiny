@@ -25,33 +25,33 @@ ui <- fluidPage(
        ),
        column(2,
               div(
-                  class="card",
+                  class="card season",
                   textOutput("season.name"),
-                  p(textOutput("season.counter", inline = TRUE), "/", textOutput("season.max", inline = TRUE)),
+                  div(textOutput("season.counter", inline = TRUE), "/", textOutput("season.max", inline = TRUE)),
                   textOutput("season.description")
               )
        ),
        column(2,
               div(
-                  class="card",
+                  class="card edict",
                   p("A")
               )
        ),
        column(2,
               div(
-                  class="card",
+                  class="card edict",
                   p("B")
               )
        ),
        column(2,
               div(
-                  class="card",
+                  class="card edict",
                   p("C")
               )
        ),
        column(2,
               div(
-                  class="card",
+                  class="card edict",
                   p("D")
               )
        )

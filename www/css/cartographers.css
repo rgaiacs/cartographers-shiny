@@ -11,6 +11,23 @@
   color: white;
 }
 
+.season {
+  text-align: center;
+  font-weight: bold;
+}
+.season > div {
+  font-size: 6rem;
+}
+.edict {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+.edict > p {
+  font-size: 10rem;
+}
+
 .card img {
   width: 100%;
 }
