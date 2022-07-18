@@ -81,7 +81,7 @@ ui <- fluidPage(
                div(
                    class="card score",
                    textOutput("A.name"),
-                   img(src = "img/placeholder.png", height = 100, width = 100),
+                   imageOutput("A.illustration", height="auto"),
                    textOutput("A.description")
                )
         ),
@@ -89,7 +89,7 @@ ui <- fluidPage(
                div(
                    class="card score",
                    textOutput("B.name"),
-                   img(src = "img/placeholder.png", height = 100, width = 100),
+                   imageOutput("B.illustration", height="auto"),
                    textOutput("B.description")
                )
         ),
@@ -97,7 +97,7 @@ ui <- fluidPage(
                div(
                    class="card score",
                    textOutput("C.name"),
-                   img(src = "img/placeholder.png", height = 100, width = 100),
+                   imageOutput("C.illustration", height="auto"),
                    textOutput("C.description")
                )
         ),
@@ -105,7 +105,7 @@ ui <- fluidPage(
                div(
                    class="card score",
                    textOutput("D.name"),
-                   img(src = "img/placeholder.png", height = 100, width = 100),
+                   imageOutput("D.illustration", height="auto"),
                    textOutput("D.description")
                )
         )
@@ -135,24 +135,28 @@ server <- function(input, output) {
     
     # Main logic
     observeEvent(input$next.card, {
-        if (this_season > 4) {
-            return()
-        }
         if (start_new_season) {
             start_new_season <<- 0
             this_season <<- this_season + 1
             this_card <<- 1
-            
-            deck <<- merge(
-                explore,
-                head(ambush, seasons$ambush.number[this_season]),
-                by=c("en_name", "illustration"),
-                all=TRUE
-            )
-            deck <<- sample_frac(deck, 1)
-            
-            time_now <<- time_now <<-  deck$cost[1:this_card] |>
-                sum(na.rm = TRUE)
+
+            if (this_season > 4) {
+                removeUI(
+                    selector = "#next.card"
+                )
+            }
+            else {
+                deck <<- merge(
+                    explore,
+                    head(ambush, seasons$ambush.number[this_season]),
+                    by=c("en_name", "illustration"),
+                    all=TRUE
+                )
+                deck <<- sample_frac(deck, 1)
+                
+                time_now <<- time_now <<-  deck$cost[1:this_card] |>
+                    sum(na.rm = TRUE)
+            }
         }
         else {
             this_card <<- this_card + 1
@@ -186,12 +190,28 @@ server <- function(input, output) {
 
     output$A.name <- renderText({scoring$en_name[1]})
     output$A.description <- renderText({scoring$en_description[1]})
+    output$A.illustration <- renderImage({
+        text <-  normalizePath(file.path('./images', scoring$illustration[1]))
+        list(src=text)
+    }, deleteFile = FALSE)
     output$B.name <- renderText({scoring$en_name[2]})
     output$B.description <- renderText({scoring$en_description[2]})
+    output$B.illustration <- renderImage({
+        text <-  normalizePath(file.path('./images', scoring$illustration[2]))
+        list(src=text)
+    }, deleteFile = FALSE)
     output$C.name <- renderText({scoring$en_name[3]})
     output$C.description <- renderText({scoring$en_description[3]})
+    output$C.illustration <- renderImage({
+        text <-  normalizePath(file.path('./images', scoring$illustration[3]))
+        list(src=text)
+    }, deleteFile = FALSE)
     output$D.name <- renderText({scoring$en_name[4]})
     output$D.description <- renderText({scoring$en_description[4]})
+    output$D.illustration <- renderImage({
+        text <-  normalizePath(file.path('./images', scoring$illustration[4]))
+        list(src=text)
+    }, deleteFile = FALSE)
         
     output$card.counter <- renderText({input$next.card})
     output$top.card.name <- renderText({
@@ -225,7 +245,6 @@ server <- function(input, output) {
         input$next.card
         
         if (this_card > 0) {
-            cat(deck$cost[this_card])
             if (!is.na(deck$cost[this_card]) & deck$cost[this_card] == 1) {
                 text <- "1 coin"
             }
