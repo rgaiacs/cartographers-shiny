@@ -32,17 +32,27 @@
   width: 100%;
 }
 
-.card.score > div:first-child {
+.score > div:first-child {
     text-align: center;
     font-weight: bold;
     padding: 1em;
 }
 
-.card.score > div:last-child {
+.score > div:last-child {
     padding: 1em;
 }
 
-.card.explore > div:first-child {
+.title {
+    text-align: center;
+    font-weight: bold;
+    padding: 1em;
+}
+
+.name {
+  font-size: 2em;
+}
+
+.cost {
   float: right;
   background: gold;
   border-radius: 1em;
@@ -52,13 +62,9 @@
   color: black;
 }
 
-.card.explore > div:nth-child(2) {
-    text-align: center;
-    font-weight: bold;
-    padding: 1em;
-}
 
-.card.explore > div:last-child {
+
+.explore > div:last-child {
     padding: 1em;
 }
 

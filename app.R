@@ -64,18 +64,7 @@ ui <- fluidPage(
                )
         ),
         column(2,
-               div(
-                   class="card explore",
-                   textOutput("top.card.cost"),
-                   textOutput("top.card.name"),
-                   imageOutput("top.card.illustration", height="auto"),
-                   div(
-                       class="coin",
-                       textOutput("top.card.coin")
-                   ),
-                   textOutput("top.card.description")
-               )
-               #textOutput("card.counter"),
+               uiOutput("cards")
         ),
         column(2,
                div(
@@ -118,21 +107,21 @@ server <- function(input, output) {
     this_season <- 0
     this_card <- 0
     time_now <- 0
-    
+
     seasons <- read_csv('data/season.csv')
-    
+
     scoring <- read_csv('data/scoring.csv') %>%
         group_by(group) %>%
         group_modify(~ sample_n(.x, 1)) %>%
         ungroup() %>%
         sample_frac(1)
-    
+
     explore <- read_csv('data/explore.csv') %>%
         sample_frac(1)
-    
+
     ambush <- read_csv('data/ambush.csv') %>%
         sample_frac(1)
-    
+
     # Main logic
     observeEvent(input$next.card, {
         if (start_new_season) {
@@ -153,7 +142,7 @@ server <- function(input, output) {
                     all=TRUE
                 )
                 deck <<- sample_frac(deck, 1)
-                
+
                 time_now <<- time_now <<-  deck$cost[1:this_card] |>
                     sum(na.rm = TRUE)
             }
@@ -162,14 +151,38 @@ server <- function(input, output) {
             this_card <<- this_card + 1
             time_now <<-  deck$cost[1:this_card] |>
                 sum(na.rm = TRUE)
-            
+
             if (time_now >= seasons$max.time[this_season]) {
                 start_new_season <<- 1
             }
-            
+
         }
+
+        output$cards <- renderUI({
+            tagList(
+                lapply(this_card:1, function(i) {
+                    div(
+                        class="card explore",
+                        div(
+                            class="title",
+                            span(class="cost", deck$cost[i]),
+                            span(class="name", deck$en_name[i])
+                        ),
+                        div(
+                            img(src=file.path('./images', deck$illustration[i]))
+                        ),
+                        div(
+                            span(class="coin",paste(deck$coin[i], "coin"))
+                        ),
+                        div(
+                            span(deck$power[i])
+                        )
+                    )
+                })
+            )
+        })
     })
-    
+
     # Update state
     output$season.name <- renderText({
         input$next.card
@@ -212,65 +225,7 @@ server <- function(input, output) {
         text <-  normalizePath(file.path('./images', scoring$illustration[4]))
         list(src=text)
     }, deleteFile = FALSE)
-        
-    output$card.counter <- renderText({input$next.card})
-    output$top.card.name <- renderText({
-        input$next.card
-
-        if (this_card > 0) {
-            text <- deck$en_name[this_card]
-        }
-        else {
-            text <- ""
-        }
-        text
-    })
-    output$top.card.cost <- renderText({
-        input$next.card
-
-        if (this_card > 0) {
-            if (is.na(deck$cost[this_card])) {
-                text <- ""
-            }
-            else {
-                text <- deck$cost[this_card]
-            }
-        }
-        else {
-            text <- ""
-        }
-        text
-    })
-    output$top.card.coin <- renderText({
-        input$next.card
-        
-        if (this_card > 0) {
-            if (!is.na(deck$cost[this_card]) & deck$cost[this_card] == 1) {
-                text <- "1 coin"
-            }
-            else {
-                text <- ""
-            }
-        }
-        else {
-            text <- ""
-        }
-        text
-    })
-    output$top.card.illustration <- renderImage({
-        input$next.card
-
-        if (this_card > 0) {
-            text <-  normalizePath(file.path('./images', deck$illustration[this_card]))
-        }
-        else {
-            text <- ""
-        }
-
-        list(src=text)
-    }, deleteFile = FALSE)
-    output$top.card.description <- renderText({ "" })
 }
 
-# Run the application 
+# Run the application
 shinyApp(ui = ui, server = server)
