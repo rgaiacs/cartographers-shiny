@@ -204,25 +204,25 @@ server <- function(input, output) {
     output$A.name <- renderText({scoring$en_name[1]})
     output$A.description <- renderText({scoring$en_description[1]})
     output$A.illustration <- renderImage({
-        text <-  normalizePath(file.path('./images', scoring$illustration[1]))
+        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[1]))
         list(src=text)
     }, deleteFile = FALSE)
     output$B.name <- renderText({scoring$en_name[2]})
     output$B.description <- renderText({scoring$en_description[2]})
     output$B.illustration <- renderImage({
-        text <-  normalizePath(file.path('./images', scoring$illustration[2]))
+        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[2]))
         list(src=text)
     }, deleteFile = FALSE)
     output$C.name <- renderText({scoring$en_name[3]})
     output$C.description <- renderText({scoring$en_description[3]})
     output$C.illustration <- renderImage({
-        text <-  normalizePath(file.path('./images', scoring$illustration[3]))
+        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[3]))
         list(src=text)
     }, deleteFile = FALSE)
     output$D.name <- renderText({scoring$en_name[4]})
     output$D.description <- renderText({scoring$en_description[4]})
     output$D.illustration <- renderImage({
-        text <-  normalizePath(file.path('./images', scoring$illustration[4]))
+        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[4]))
         list(src=text)
     }, deleteFile = FALSE)
 }
