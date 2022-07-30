@@ -1,6 +1,6 @@
 FROM mambaorg/micromamba AS base
 USER $MAMBA_USER
-RUN micromamba install -y -n base \
+RUN micromamba install -y -n base -c conda-forge \
     r-base \
     r-tidyverse \
     r-shiny \
