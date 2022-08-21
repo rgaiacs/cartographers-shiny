@@ -151,7 +151,7 @@ server <- function(input, output) {
     scoring <- ALL_SCORING_CARDS %>%
         filter(game == 'original') %>%
         group_by(group) %>%
-        group_modify( ~ sample_n(.x, 1)) %>%
+        group_modify(~ sample_n(.x, 1)) %>%
         ungroup() %>%
         sample_frac(1)
 
@@ -182,7 +182,7 @@ server <- function(input, output) {
         scoring <<- ALL_SCORING_CARDS %>%
             filter(game %in% input$scoring_deck) %>%
             group_by(group) %>%
-            group_modify( ~ sample_n(.x, 1)) %>%
+            group_modify(~ sample_n(.x, 1)) %>%
             ungroup() %>%
             sample_frac(1)
 
@@ -197,6 +197,10 @@ server <- function(input, output) {
         heroes <<- ALL_HEROES_CARDS %>%
             filter(game %in% input$heroes_deck) %>%
             sample_frac(1)
+
+        output$cards <- renderUI({
+            div(class = "card explore",)
+        })
     })
 
     # Main logic
@@ -237,7 +241,6 @@ server <- function(input, output) {
             if (time_now >= seasons$max.time[this_season]) {
                 start_new_season <<- 1
             }
-
         }
 
         output$cards <- renderUI({
