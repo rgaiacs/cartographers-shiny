@@ -1,14 +1,28 @@
-en_name,cost,illustration,coin
-Rift Lands,0,rift-lands.svg,0
-Treetop Village,2,treetop-village.svg,0
-Outpost Ruins,,outpost-ruins.svg,0
-Marshlands,2,marshlands.svg,0
-Great River,1,great-river.svg,1
-Forgotten Forest,1,forgotten-forest.svg,1
-Hinterland Stream,2,hinterland-stream.svg,0
-Fishing Village,2,fishing-village.svg,0
-Orchard,2,orchard.svg,0
-Farmland,1,farmland.svg,1
-Hamlet,1,hamlet.svg,1
-Temple Ruins,,temple-ruins.svg,0
-Homestead,2,homestead.svg,0
+game,en_name,fr_name,cost,illustration,coin
+original,Rift Lands,,0,rift-lands.svg,0
+original,Treetop Village,,2,treetop-village.svg,0
+original,Outpost Ruins,,,outpost-ruins.svg,0
+original,Marshlands,,2,marshlands.svg,0
+original,Great River,,1,great-river.svg,1
+original,Forgotten Forest,,1,forgotten-forest.svg,1
+original,Hinterland Stream,,2,hinterland-stream.svg,0
+original,Fishing Village,,2,fishing-village.svg,0
+original,Orchard,,2,orchard.svg,0
+original,Farmland,,1,farmland.svg,1
+original,Hamlet,,1,hamlet.svg,1
+original,Temple Ruins,,,temple-ruins.svg,0
+original,Homestead,,2,homestead.svg,0
+heroes,Lagoon,Lagon,1,lagoon.svg,1
+heroes,Pasture,Pâturage,1,pasture.svg,1
+heroes,Settlement,Quartier,1,settlement.svg,1
+heroes,Timber Grove,Sous-Bois,1,timber-grove.svg,1
+heroes,Hillside Terrace,Restanques,2,hillside-terrace.svg,0
+heroes,Frontier Dwelling,Logis Frontalier,2,frontier-dwelling.svg,0
+heroes,Wildwood Garden,Jardin Suvage,2,wildwood-garden.svg,0
+heroes,Woodland Crossroads,Croisement Forestier,2,woodland-crossroads.svg,0
+heroes,Mangrove Swamp,Mangrove,2,mangrove-swamp.svg,0
+heroes,Costal Encampment,Campement Littoral,2,costal-encampment.svg,0
+heroes,Kethra’s Gates,Portes de Kethra,0,kethras-gates.svg,0
+volcano,Rain of Fire,D’eluge de Feu,1,rain-of-fire.svg,0
+volcano,Seismic Tremors,Secousses Sismiques,0,seismic-tremors.svg,0
+volcano,Lava Flow,Rivière de Lave,0,lava-flow.svg,0

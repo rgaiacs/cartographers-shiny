@@ -1,5 +1,9 @@
-"en_name","max.time","edict","ambush.number"
-"Spring",8,"A/B",2
-"Summer",8,"B/C",3
-"Fall",7,"C/D",4
-"Winter",6,"D/A",4
+game,en_name,max.time,edict,ambush.number
+original,Spring,8,A/B,2
+original,Summer,8,B/C,3
+original,Fall,7,C/D,4
+original,Winter,6,D/A,4
+heroes,Spring,8,A/B,2
+heroes,Summer,7,B/C,3
+heroes,Fall,7,C/D,4
+heroes,Winter,6,D/A,4
