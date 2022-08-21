@@ -221,7 +221,7 @@ server <- function(input, output) {
                     all = TRUE
                 )
                 deck <<- merge(
-                    explore,
+                    deck,
                     head(heroes, seasons$ambush.number[this_season]),
                     by = c("en_name", "illustration"),
                     all = TRUE
