@@ -156,7 +156,7 @@ server <- function(input, output) {
         sample_frac(1)
 
     explore <- ALL_EXPLORE_CARDS %>%
-        filter(game == 'original') %>%
+        filter(game %in% c('original', 'ruin')) %>%
         sample_frac(1)
 
     ambush <- ALL_AMBUSH_CARDS %>%
@@ -187,7 +187,7 @@ server <- function(input, output) {
             sample_frac(1)
 
         explore <<- ALL_EXPLORE_CARDS %>%
-            filter(game %in% input$explore_deck) %>%
+            filter(game %in% c(input$explore_deck, 'ruin')) %>%
             sample_frac(1)
 
         ambush <<- ALL_AMBUSH_CARDS %>%
