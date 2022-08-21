@@ -44,19 +44,22 @@ ui <- fluidPage(
     titlePanel("Cartographers"),
     tabsetPanel(
         type = "tabs",
-        tabPanel("Configuration", div(
-            selectInput("season_deck", "Season Deck:",
-                               season_deck, selected="original"),
-            checkboxGroupInput("explore_deck", "Explore Deck:",
-                        explore_deck, selected="original"),
-            checkboxGroupInput("scoring_deck", "Scoring Deck:",
-                        scoring_deck, selected="original"),
-            checkboxGroupInput("ambush_deck", "Ambush Deck:",
-                               ambush_deck, selected="original"),
-            checkboxGroupInput("heroes_deck", "Heroes Deck:",
-                               heroes_deck),
-            actionButton("new.game", label = "New Game")
-        )),
+        tabPanel(
+            "Configuration",
+            div(
+                selectInput("season_deck", "Season Deck:",
+                            season_deck, selected = "original"),
+                checkboxGroupInput("explore_deck", "Explore Deck:",
+                                   explore_deck, selected = "original"),
+                checkboxGroupInput("scoring_deck", "Scoring Deck:",
+                                   scoring_deck, selected = "original"),
+                checkboxGroupInput("ambush_deck", "Ambush Deck:",
+                                   ambush_deck, selected = "original"),
+                checkboxGroupInput("heroes_deck", "Heroes Deck:",
+                                   heroes_deck),
+                actionButton("new.game", label = "New Game")
+            )
+        ),
         tabPanel(
             "Table",
             fluidRow(
@@ -148,7 +151,7 @@ server <- function(input, output) {
     scoring <- ALL_SCORING_CARDS %>%
         filter(game == 'original') %>%
         group_by(group) %>%
-        group_modify(~ sample_n(.x, 1)) %>%
+        group_modify( ~ sample_n(.x, 1)) %>%
         ungroup() %>%
         sample_frac(1)
 
@@ -179,7 +182,7 @@ server <- function(input, output) {
         scoring <<- ALL_SCORING_CARDS %>%
             filter(game %in% input$scoring_deck) %>%
             group_by(group) %>%
-            group_modify(~ sample_n(.x, 1)) %>%
+            group_modify( ~ sample_n(.x, 1)) %>%
             ungroup() %>%
             sample_frac(1)
 
