@@ -11,92 +11,126 @@ library(shiny)
 
 library(tidyverse)
 
+ALL_SEASON_CARDS <- read_csv('data/season.csv')
+season_deck <-
+    ALL_SEASON_CARDS$game |>
+    unique()
+
+ALL_SCORING_CARDS <- read_csv('data/scoring.csv')
+scoring_deck <-
+    ALL_SCORING_CARDS$game |>
+    unique()
+
+ALL_EXPLORE_CARDS <- read_csv('data/explore.csv')
+explore_deck <-
+    ALL_EXPLORE_CARDS$game |>
+    unique()
+
+ALL_AMBUSH_CARDS <- read_csv('data/ambush.csv')
+ambush_deck <-
+    ALL_AMBUSH_CARDS$game |>
+    unique()
+
+ALL_HEROES_CARDS <- read_csv('data/heroes.csv')
+heroes_deck <-
+    ALL_HEROES_CARDS$game |>
+    unique()
+
 # Define UI for application that draws a histogram
 ui <- fluidPage(
     tags$head(
         tags$link(rel = "stylesheet", type = "text/css", href = "css/cartographers.css")
     ),
     titlePanel("Cartographers"),
-    fluidRow(
-        column(2,
-               div(
-                   class="card-empty"
-               )
-       ),
-       column(2,
-              div(
-                  class="card season",
-                  textOutput("season.name"),
-                  div(textOutput("season.counter", inline = TRUE), "/", textOutput("season.max", inline = TRUE)),
-                  textOutput("season.description")
-              )
-       ),
-       column(2,
-              div(
-                  class="card edict",
-                  p("A")
-              )
-       ),
-       column(2,
-              div(
-                  class="card edict",
-                  p("B")
-              )
-       ),
-       column(2,
-              div(
-                  class="card edict",
-                  p("C")
-              )
-       ),
-       column(2,
-              div(
-                  class="card edict",
-                  p("D")
-              )
-       )
-    ),
-    fluidRow(
-        column(2,
-               div(
-                   class="card",
-                   actionButton("next.card", label = "Next Card")
-               )
-        ),
-        column(2,
-               uiOutput("cards")
-        ),
-        column(2,
-               div(
-                   class="card score",
-                   textOutput("A.name"),
-                   imageOutput("A.illustration", height="auto"),
-                   textOutput("A.description")
-               )
-        ),
-        column(2,
-               div(
-                   class="card score",
-                   textOutput("B.name"),
-                   imageOutput("B.illustration", height="auto"),
-                   textOutput("B.description")
-               )
-        ),
-        column(2,
-               div(
-                   class="card score",
-                   textOutput("C.name"),
-                   imageOutput("C.illustration", height="auto"),
-                   textOutput("C.description")
-               )
-        ),
-        column(2,
-               div(
-                   class="card score",
-                   textOutput("D.name"),
-                   imageOutput("D.illustration", height="auto"),
-                   textOutput("D.description")
-               )
+    tabsetPanel(
+        type = "tabs",
+        tabPanel("Configuration", div(
+            selectInput("season_deck", "Season Deck:",
+                               season_deck, selected="original"),
+            checkboxGroupInput("explore_deck", "Explore Deck:",
+                        explore_deck, selected="original"),
+            checkboxGroupInput("scoring_deck", "Scoring Deck:",
+                        scoring_deck, selected="original"),
+            checkboxGroupInput("ambush_deck", "Ambush Deck:",
+                               ambush_deck, selected="original"),
+            checkboxGroupInput("heroes_deck", "Heroes Deck:",
+                               heroes_deck),
+            actionButton("new.game", label = "New Game")
+        )),
+        tabPanel(
+            "Table",
+            fluidRow(
+                column(2,
+                       div(class = "card-empty")),
+                column(2,
+                       div(
+                           class = "card season",
+                           textOutput("season.name"),
+                           div(
+                               textOutput("season.counter", inline = TRUE),
+                               "/",
+                               textOutput("season.max", inline = TRUE)
+                           ),
+                           textOutput("season.description")
+                       )),
+                column(2,
+                       div(class = "card edict",
+                           p("A"))),
+                column(2,
+                       div(class = "card edict",
+                           p("B"))),
+                column(2,
+                       div(class = "card edict",
+                           p("C"))),
+                column(2,
+                       div(class = "card edict",
+                           p("D")))
+            ),
+            fluidRow(
+                column(2,
+                       div(
+                           class = "card",
+                           actionButton("next.card", label = "Next Card")
+                       )),
+                column(2,
+                       uiOutput("cards")),
+                column(
+                    2,
+                    div(
+                        class = "card score",
+                        textOutput("A.name"),
+                        imageOutput("A.illustration", height = "auto"),
+                        textOutput("A.description")
+                    )
+                ),
+                column(
+                    2,
+                    div(
+                        class = "card score",
+                        textOutput("B.name"),
+                        imageOutput("B.illustration", height = "auto"),
+                        textOutput("B.description")
+                    )
+                ),
+                column(
+                    2,
+                    div(
+                        class = "card score",
+                        textOutput("C.name"),
+                        imageOutput("C.illustration", height = "auto"),
+                        textOutput("C.description")
+                    )
+                ),
+                column(
+                    2,
+                    div(
+                        class = "card score",
+                        textOutput("D.name"),
+                        imageOutput("D.illustration", height = "auto"),
+                        textOutput("D.description")
+                    )
+                )
+            )
         )
     )
 )
@@ -108,19 +142,59 @@ server <- function(input, output) {
     this_card <- 0
     time_now <- 0
 
-    seasons <- read_csv('data/season.csv')
+    seasons <- ALL_SEASON_CARDS %>%
+        filter(game == 'original')
 
-    scoring <- read_csv('data/scoring.csv') %>%
+    scoring <- ALL_SCORING_CARDS %>%
+        filter(game == 'original') %>%
         group_by(group) %>%
         group_modify(~ sample_n(.x, 1)) %>%
         ungroup() %>%
         sample_frac(1)
 
-    explore <- read_csv('data/explore.csv') %>%
+    explore <- ALL_EXPLORE_CARDS %>%
+        filter(game == 'original') %>%
         sample_frac(1)
 
-    ambush <- read_csv('data/ambush.csv') %>%
+    ambush <- ALL_AMBUSH_CARDS %>%
+        filter(game == 'original') %>%
         sample_frac(1)
+
+    heroes <- ALL_HEROES_CARDS %>%
+        filter(game == 'original') %>%
+        sample_frac(1)
+
+    observeEvent(input$new.game, {
+        cat("Explore Deck:", input$explore_deck, "\n")
+        cat("Scoring Deck:", input$scoring_deck, "\n")
+
+        start_new_season <<- 1
+        this_season <<- 0
+        this_card <<- 0
+        time_now <<- 0
+
+        seasons <<- ALL_SEASON_CARDS %>%
+            filter(game %in% input$season_deck)
+
+        scoring <<- ALL_SCORING_CARDS %>%
+            filter(game %in% input$scoring_deck) %>%
+            group_by(group) %>%
+            group_modify(~ sample_n(.x, 1)) %>%
+            ungroup() %>%
+            sample_frac(1)
+
+        explore <<- ALL_EXPLORE_CARDS %>%
+            filter(game %in% input$explore_deck) %>%
+            sample_frac(1)
+
+        ambush <<- ALL_AMBUSH_CARDS %>%
+            filter(game %in% input$ambush_deck) %>%
+            sample_frac(1)
+
+        heroes <<- ALL_HEROES_CARDS %>%
+            filter(game %in% input$heroes_deck) %>%
+            sample_frac(1)
+    })
 
     # Main logic
     observeEvent(input$next.card, {
@@ -130,20 +204,25 @@ server <- function(input, output) {
             this_card <<- 1
 
             if (this_season > 4) {
-                removeUI(
-                    selector = "#next.card"
-                )
+                removeUI(selector = "#next.card")
             }
             else {
                 deck <<- merge(
                     explore,
                     head(ambush, seasons$ambush.number[this_season]),
-                    by=c("en_name", "illustration"),
-                    all=TRUE
+                    by = c("en_name", "illustration"),
+                    all = TRUE
+                )
+                deck <<- merge(
+                    explore,
+                    head(heroes, seasons$ambush.number[this_season]),
+                    by = c("en_name", "illustration"),
+                    all = TRUE
                 )
                 deck <<- sample_frac(deck, 1)
 
-                time_now <<- time_now <<-  deck$cost[1:this_card] |>
+                time_now <<-
+                    time_now <<-  deck$cost[1:this_card] |>
                     sum(na.rm = TRUE)
             }
         }
@@ -159,71 +238,105 @@ server <- function(input, output) {
         }
 
         output$cards <- renderUI({
-            tagList(
-                lapply(this_card:1, function(i) {
+            tagList(lapply(this_card:1, function(i) {
+                div(
+                    class = "card explore",
                     div(
-                        class="card explore",
-                        div(
-                            class="title",
-                            span(class="cost", deck$cost[i]),
-                            span(class="name", deck$en_name[i])
-                        ),
-                        div(
-                            img(src=file.path('./images', deck$illustration[i]))
-                        ),
-                        div(
-                            span(class="coin",paste(deck$coin[i], "coin"))
-                        ),
-                        div(
-                            span(deck$power[i])
-                        )
-                    )
-                })
-            )
+                        class = "title",
+                        span(class = "cost", deck$cost[i]),
+                        span(class = "name", deck$en_name[i])
+                    ),
+                    div(img(
+                        src = file.path('./images', deck$illustration[i])
+                    )),
+                    div(span(
+                        class = "coin", paste(deck$coin[i], "coin")
+                    )),
+                    div(span(deck$power[i]))
+                )
+            }))
         })
     })
 
     # Update state
     output$season.name <- renderText({
-        input$next.card
+        input$new.game && input$next.card
         seasons$en_name[this_season]
     })
     output$season.counter <- renderText({
-        input$next.card
+        input$new.game && input$next.card
         time_now
     })
     output$season.max <- renderText({
-        input$next.card
-        if(this_season == 0) 0 else seasons$max.time[this_season]
+        input$new.game && input$next.card
+        if (this_season == 0)
+            0
+        else
+            seasons$max.time[this_season]
     })
     output$season.description <- renderText({
-        input$next.card
-        if(this_season == 0) 0 else seasons$edict[this_season]
+        input$new.game && input$next.card
+        if (this_season == 0)
+            0
+        else
+            seasons$edict[this_season]
     })
 
-    output$A.name <- renderText({scoring$en_name[1]})
-    output$A.description <- renderText({scoring$en_description[1]})
+    output$A.name <- renderText({
+        input$new.game
+        scoring$en_name[1]
+    })
+    output$A.description <- renderText({
+        input$new.game
+        scoring$en_description[1]
+    })
     output$A.illustration <- renderImage({
-        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[1]))
-        list(src=text)
+        input$new.game
+        text <-
+            normalizePath(file.path('.', 'www', 'images', scoring$illustration[1]))
+        list(src = text)
     }, deleteFile = FALSE)
-    output$B.name <- renderText({scoring$en_name[2]})
-    output$B.description <- renderText({scoring$en_description[2]})
+    output$B.name <- renderText({
+        input$new.game
+        scoring$en_name[2]
+    })
+    output$B.description <- renderText({
+        input$new.game
+        scoring$en_description[2]
+    })
     output$B.illustration <- renderImage({
-        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[2]))
-        list(src=text)
+        input$new.game
+        text <-
+            normalizePath(file.path('.', 'www', 'images', scoring$illustration[2]))
+        list(src = text)
     }, deleteFile = FALSE)
-    output$C.name <- renderText({scoring$en_name[3]})
-    output$C.description <- renderText({scoring$en_description[3]})
+    output$C.name <- renderText({
+        input$new.game
+        scoring$en_name[3]
+    })
+    output$C.description <- renderText({
+        input$new.game
+        scoring$en_description[3]
+    })
     output$C.illustration <- renderImage({
-        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[3]))
-        list(src=text)
+        input$new.game
+        text <-
+            normalizePath(file.path('.', 'www', 'images', scoring$illustration[3]))
+        list(src = text)
     }, deleteFile = FALSE)
-    output$D.name <- renderText({scoring$en_name[4]})
-    output$D.description <- renderText({scoring$en_description[4]})
+    output$D.name <- renderText({
+        input$new.game
+        scoring$en_name[4]
+    })
+    output$D.description <- renderText({
+        input$new.game
+        scoring$en_description[4]
+    })
     output$D.illustration <- renderImage({
-        text <-  normalizePath(file.path('.', 'www', 'images', scoring$illustration[4]))
-        list(src=text)
+        input$new.game
+        text <-
+            normalizePath(file.path('.', 'www', 'images', scoring$illustration[4]))
+        list(src = text)
     }, deleteFile = FALSE)
 }
 
