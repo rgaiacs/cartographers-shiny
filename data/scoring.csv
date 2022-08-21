@@ -24,9 +24,9 @@ heroes,blue and yellow,ulems-wallow.svg,Ulem’s Wallow,Earn four points for eac
 heroes,blue and yellow,clawsgrave-peaks.svg,Clawsgrave Peaks,Earn five points for each mountain space connected to a yellow by a cluster of blues.
 heroes,blue and yellow,jorekburg.svg,Jorekburg,Earn four points for each column that contains an equal number of yellows and blues. There must be at least one of each.
 heroes,red,traylo-monastery.svg,Traylo Monastery,Earn seven points for each cluster of reds that contains four spaces in a 4x1 or 1x4 rectangle.
-heroes,red,outer-enclave.svg,Outer Enclave,Choose a cluster of reds and earn one reputation star for each empty space adjacent to that cluster.
+heroes,red,outer-enclave.svg,Outer Enclave,Choose a cluster of reds and earn one reputation point for each empty space adjacent to that cluster.
 heroes,red,gnomish-colony.svg,Gnomish Colony,Earn six points for each cluster of reds that contains four spaces in a 2x2 square.
-heroes,red,caravansary.svg,Caravansary,Choose a cluster of reds and earn one reputation star for each row and column that contains a space from that cluster.
+heroes,red,caravansary.svg,Caravansary,Choose a cluster of reds and earn one reputation point for each row and column that contains a space from that cluster.
 heroes,shape,dwarvenholds.svg,Dwarvenholds,Earn seven points for each complete row or complete column of filled spaces that contains a mountain space.
 heroes,shape,silos.svg,Silos,Earn ten points for each complete odd numbered column of filled spaces.
 heroes,shape,banded-hills.svg,Banded Hills,Earn four points for each row that contains five or more different terrain types.
