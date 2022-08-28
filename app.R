@@ -51,8 +51,10 @@ ui <- fluidPage(
                             season_deck, selected = "original"),
                 checkboxGroupInput("explore_deck", "Explore Deck:",
                                    explore_deck, selected = "original"),
-                checkboxGroupInput("scoring_deck", "Scoring Deck:",
-                                   scoring_deck, selected = "original"),
+                selectInput("scoring_deck", "Scoring Deck:",
+                                   c("original", "heroes"), selected = "original"),
+                selectInput("scoring_deck_expansion", "Scoring Deck Expansion:",
+                            c("", "undercity"), selected = ""),
                 checkboxGroupInput("ambush_deck", "Ambush Deck:",
                                    ambush_deck, selected = "original"),
                 checkboxGroupInput("heroes_deck", "Heroes Deck:",
@@ -170,6 +172,9 @@ server <- function(input, output) {
     observeEvent(input$new.game, {
         cat("Explore Deck:", input$explore_deck, "\n")
         cat("Scoring Deck:", input$scoring_deck, "\n")
+        cat("Scoring Deck Expansion:", typeof(input$scoring_deck_expansion), "\n")
+        cat("Scoring Deck Expansion:", length(input$scoring_deck_expansion), "\n")
+        cat("Scoring Deck Expansion:", input$scoring_deck_expansion == "", "\n")
 
         start_new_season <<- 1
         this_season <<- 0
@@ -179,8 +184,14 @@ server <- function(input, output) {
         seasons <<- ALL_SEASON_CARDS %>%
             filter(game %in% input$season_deck)
 
+        if (input$scoring_deck_expansion == "") {
+            scoring_deck_expansion <- input$scoring_deck
+        }
+        else {
+            scoring_deck_expansion <- input$scoring_deck_expansion
+        }
         scoring <<- ALL_SCORING_CARDS %>%
-            filter(game %in% input$scoring_deck) %>%
+            filter((game %in% input$scoring_deck & group != 'shape') | (game == scoring_deck_expansion & group == 'shape')) %>%
             group_by(group) %>%
             group_modify(~ sample_n(.x, 1)) %>%
             ungroup() %>%

@@ -1,7 +1,7 @@
 game,en_name,fr_name,cost,illustration,coin
 original,Rift Lands,,0,rift-lands.svg,0
 original,Treetop Village,,2,treetop-village.svg,0
-original,Outpost Ruins,,,outpost-ruins.svg,0
+ruin,Outpost Ruins,,,outpost-ruins.svg,0
 original,Marshlands,,2,marshlands.svg,0
 original,Great River,,1,great-river.svg,1
 original,Forgotten Forest,,1,forgotten-forest.svg,1
@@ -10,7 +10,7 @@ original,Fishing Village,,2,fishing-village.svg,0
 original,Orchard,,2,orchard.svg,0
 original,Farmland,,1,farmland.svg,1
 original,Hamlet,,1,hamlet.svg,1
-original,Temple Ruins,,,temple-ruins.svg,0
+ruin,Temple Ruins,,,temple-ruins.svg,0
 original,Homestead,,2,homestead.svg,0
 heroes,Lagoon,Lagon,1,lagoon.svg,1
 heroes,Pasture,Pâturage,1,pasture.svg,1
