@@ -31,6 +31,6 @@ heroes,shape,dwarvenholds.svg,Dwarvenholds,Earn seven points for each complete r
 heroes,shape,silos.svg,Silos,Earn ten points for each complete odd numbered column of filled spaces.,,
 heroes,shape,banded-hills.svg,Banded Hills,Earn four points for each row that contains five or more different terrain types.,,
 heroes,shape,starlit-sigil.svg,Starlit Sigil,Earn four points for each cluster of exactly three empty spaces surrounded on all sides by filled spaces or the edge of the map.,,
-undercity,shape,ancient-sepulchre.svg,Ancient Sepulchre,Earn five points for each mountain connected to a ruin space by filled spaces of any colour.,Sepulcre Antique,
+undercity,shape,ancient-sepulchre.svg,Ancient Sepulchre,Earn five points for each mountain connected to a ruin space by filled spaces of the same colour. The ruin space must have the same colour.,Sepulcre Antique,
 undercity,shape,the-pit.svg,The Pit,Earn eight points for a complete row or column blow ground.,La Fosse,
 undercity,shape,azemas-bones.svg,Azema’s Bones,Earn five points for each different colour in lowest row of the map.,Ossements d’Azema,
