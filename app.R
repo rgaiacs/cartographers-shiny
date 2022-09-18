@@ -192,6 +192,8 @@ server <- function(input, output) {
         }
         scoring <<- ALL_SCORING_CARDS %>%
             filter((game %in% input$scoring_deck & group != 'shape') | (game == scoring_deck_expansion & group == 'shape')) %>%
+	    {if (scoring_deck_expansion == "affril") filter(., en_name != 'Heart of the Forest') else .} %>%
+	    {if (scoring_deck_expansion == "affril") filter(., en_name != 'Stoneside Forest') else .} %>%
             group_by(group) %>%
             group_modify(~ sample_n(.x, 1)) %>%
             ungroup() %>%
