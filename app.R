@@ -54,7 +54,7 @@ ui <- fluidPage(
                 selectInput("scoring_deck", "Scoring Deck:",
                                    c("original", "heroes"), selected = "original"),
                 selectInput("scoring_deck_expansion", "Scoring Deck Expansion:",
-                            c("", "undercity"), selected = ""),
+                            c("", "undercity", "affril"), selected = ""),
                 checkboxGroupInput("ambush_deck", "Ambush Deck:",
                                    ambush_deck, selected = "original"),
                 checkboxGroupInput("heroes_deck", "Heroes Deck:",

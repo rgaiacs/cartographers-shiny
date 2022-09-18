@@ -34,3 +34,6 @@ heroes,shape,starlit-sigil.svg,Starlit Sigil,Earn four points for each cluster o
 undercity,shape,ancient-sepulchre.svg,Ancient Sepulchre,Earn five points for each mountain connected to a ruin space by filled spaces of the same colour. The ruin space must have the same colour.,Sepulcre Antique,
 undercity,shape,the-pit.svg,The Pit,Earn eight points for a complete row or column blow ground.,La Fosse,
 undercity,shape,azemas-bones.svg,Azema’s Bones,Earn five points for each different colour in lowest row of the map.,Ossements d’Azema,
+affril,shape,purplestone-miners.svg,Purplestone Miners,Earn five points for each island with a mountain surrounded on all for sides by filled spaces or the edge of the map.,Mineurs de Pierpourpre,
+affril,shape,crystalline-surveyor.svg,Crystalline Surveyor,Earn one point for each filled space in the longest complete row on each island.,Arpenteur Cristallin,
+affril,shape,klynoks-settlement.svg,Klynoks Settlement,"Earn seven points for each island with at least one green, one red, one yellow, and one blue space.",Campement de Klynoks,
